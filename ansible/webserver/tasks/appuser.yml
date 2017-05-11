@@ -1,0 +1,6 @@
+- name: Add deployment user
+  user:
+     name=railsapp comment=RailsAppUser group=www-data createhome=no shell=/sbin/nologin
+
+- name: Create www directory
+  file: path="/home/www" state=directory owner=railsapp group=www-data mode=0644 recurse=yes

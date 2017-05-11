@@ -1,0 +1,50 @@
+- name: upgrade
+  action: apt update_cache=yes upgrade=yes
+
+- name: install Ruby and dependencies
+  action: apt pkg={{item}} state=installed
+  with_items:
+    - build-essential
+    - automake
+    - bison
+    - autoconf
+    - pkg-config
+    - libreadline6
+    - libreadline6-dev
+    - openssl
+    - libssl-dev
+    - curl
+    - libcurl4-openssl-dev
+    - git-core
+    - zlib1g
+    - zlib1g-dev
+    - libyaml-dev
+    - libsqlite3-dev
+    - libxml2-dev
+    - libxslt1-dev
+    - libsqlite3-dev
+    - libpcre3-dev
+    - libruby
+    - ruby
+    - ruby-dev
+    - rake
+    - ruby-rack
+
+- name: Install app dependencies
+  action: apt pkg={{item}} state=installed
+  with_items:
+    - imagemagick
+    - libpq-dev
+    - nodejs
+    - thin
+  tags: package
+
+- name: Install Rails
+  command: gem install rails -v 4.2.8
+
+- name: Install Sqlite
+  command: gem install sqlite3 -v '1.3.13'
+
+- name: Install Capistrano
+  command: gem install capistrano
+  command: gem install capistrano-rails

@@ -1,0 +1,15 @@
+- hosts: production
+  remote_user: ubuntu
+  sudo: yes
+  gather_facts: no
+  pre_tasks:
+    - name: apt-get update 
+      raw: apt-get update -qq
+    - name: Install Python and aptitude
+      raw: apt-get -y install python-minimal aptitude
+
+  vars_files:
+    - vars/defaults.yml
+
+  roles:
+    - webserver
