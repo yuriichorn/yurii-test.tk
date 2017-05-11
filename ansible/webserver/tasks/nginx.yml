@@ -1,0 +1,25 @@
+- name: Install nginx
+  apt: pkg=nginx state=latest
+
+- name: Remove the default app
+  command: rm -rf /etc/nginx/sites-enabled/default
+
+- name: Remove the app's config, if exists
+  command: rm -rf /etc/nginx/sites-available/default
+
+- name: Remove the app's symlink, if exists
+  command: rm -rf /etc/nginx/sites-enabled/{{app_name}}
+
+- name: Configure nginx
+  template: 
+    src=nginx.template.conf dest=/etc/nginx/sites-available/{{app_name}} group=www-data owner=www-data force=yes
+
+- name: Enable the app
+  command: ln -s /etc/nginx/sites-available/{{app_name}} /etc/nginx/sites-enabled/{{app_name}}
+
+- name: Restart nginx
+  action: service name=nginx state=restarted
+
+- name: Configure thin
+  template: 
+    src=thin.template.conf dest=/etc/thin/{{app_name}} group=www-data owner=railsapp force=yes
