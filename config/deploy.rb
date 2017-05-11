@@ -7,6 +7,11 @@ set :ssh_options, {
 set :repo_url, 'git@github.com:yuriichorn/yurii-test.tk.git'
 set :deploy_to, '/home/www/yurii-test.tk'
 
+set(:ci_client){ "circle" }
+set(:ci_repository){ "yuriichorn/yurii-test.tk.git" }
+set(:ci_access_token){ "5f473a4379dcdda0005bc100ee6f1674af2cda64" }
+ 
+
 namespace :deploy do
   task :cleanup do
     on roles(:app) do

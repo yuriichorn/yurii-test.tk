@@ -1,0 +1,162 @@
+# Logfile created on 2017-05-11 07:59:30 +0300 by logger.rb/v1.2.7
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-05-11 07:59:30 +0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9d3ca767] Running /usr/bin/env mkdir -p /tmp as root@52.26.23.213
+ DEBUG [9d3ca767] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-05-11 08:00:12 +0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cbfe9f83] Running /usr/bin/env mkdir -p /tmp as root@52.37.231.14
+ DEBUG [cbfe9f83] Command: /usr/bin/env mkdir -p /tmp
+  INFO [cbfe9f83] Finished in 2.249 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-yurii-test.tk-production-root.sh 0.0%
+  INFO Uploading /tmp/git-ssh-yurii-test.tk-production-root.sh 100.0%
+  INFO [866ac98d] Running /usr/bin/env chmod 700 /tmp/git-ssh-yurii-test.tk-production-root.sh as root@52.37.231.14
+ DEBUG [866ac98d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-yurii-test.tk-production-root.sh
+  INFO [866ac98d] Finished in 0.391 seconds with exit status 0 (successful).
+  INFO [3b7c43b1] Running /usr/bin/env git ls-remote git@github.com:yuriichorn/yurii-test.tk.git HEAD as root@52.37.231.14
+ DEBUG [3b7c43b1] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-yurii-test.tk-production-root.sh" ; /usr/bin/env git ls-remote git@github.com:yuriichorn/yurii-test.tk.git HEAD )
+ DEBUG [3b7c43b1] 	fad210af67317fb49386229e82b50e42e6ed691a	HEAD
+  INFO [3b7c43b1] Finished in 0.618 seconds with exit status 0 (successful).
+  INFO [e9da8a4f] Running /usr/bin/env mkdir -p /home/www/yurii-test.tk/shared /home/www/yurii-test.tk/releases as root@52.37.231.14
+ DEBUG [e9da8a4f] Command: /usr/bin/env mkdir -p /home/www/yurii-test.tk/shared /home/www/yurii-test.tk/releases
+  INFO [e9da8a4f] Finished in 0.390 seconds with exit status 0 (successful).
+ DEBUG [5686d82b] Running [ -f /home/www/yurii-test.tk/current/REVISION ] as root@52.37.231.14
+ DEBUG [5686d82b] Command: [ -f /home/www/yurii-test.tk/current/REVISION ]
+ DEBUG [5686d82b] Finished in 0.393 seconds with exit status 0 (successful).
+ DEBUG [72b4a01a] Running /usr/bin/env cat /home/www/yurii-test.tk/current/REVISION 2>/dev/null as root@52.37.231.14
+ DEBUG [72b4a01a] Command: /usr/bin/env cat /home/www/yurii-test.tk/current/REVISION 2>/dev/null
+ DEBUG [72b4a01a] 	fad210af67317fb49386229e82b50e42e6ed691a
+ DEBUG [72b4a01a] Finished in 0.391 seconds with exit status 0 (successful).
+ DEBUG [0096ba3d] Running [ -f /home/www/yurii-test.tk/repo/HEAD ] as root@52.37.231.14
+ DEBUG [0096ba3d] Command: [ -f /home/www/yurii-test.tk/repo/HEAD ]
+ DEBUG [0096ba3d] Finished in 0.395 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/www/yurii-test.tk/repo
+ DEBUG [d7d6cf97] Running if test ! -d /home/www/yurii-test.tk/repo; then echo "Directory does not exist '/home/www/yurii-test.tk/repo'" 1>&2; false; fi as root@52.37.231.14
+ DEBUG [d7d6cf97] Command: if test ! -d /home/www/yurii-test.tk/repo; then echo "Directory does not exist '/home/www/yurii-test.tk/repo'" 1>&2; false; fi
+ DEBUG [d7d6cf97] Finished in 0.390 seconds with exit status 0 (successful).
+  INFO [8a42ea93] Running /usr/bin/env git remote set-url origin git@github.com:yuriichorn/yurii-test.tk.git as root@52.37.231.14
+ DEBUG [8a42ea93] Command: cd /home/www/yurii-test.tk/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-yurii-test.tk-production-root.sh" ; /usr/bin/env git remote set-url origin git@github.com:yuriichorn/yurii-test.tk.git )
+  INFO [8a42ea93] Finished in 0.391 seconds with exit status 0 (successful).
+  INFO [daa484c0] Running /usr/bin/env git remote update --prune as root@52.37.231.14
+ DEBUG [daa484c0] Command: cd /home/www/yurii-test.tk/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-yurii-test.tk-production-root.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [daa484c0] 	Fetching origin
+  INFO [daa484c0] Finished in 0.628 seconds with exit status 0 (successful).
+ DEBUG [79aeb980] Running if test ! -d /home/www/yurii-test.tk/repo; then echo "Directory does not exist '/home/www/yurii-test.tk/repo'" 1>&2; false; fi as root@52.37.231.14
+ DEBUG [79aeb980] Command: if test ! -d /home/www/yurii-test.tk/repo; then echo "Directory does not exist '/home/www/yurii-test.tk/repo'" 1>&2; false; fi
+ DEBUG [79aeb980] Finished in 0.389 seconds with exit status 0 (successful).
+  INFO [ebd38953] Running /usr/bin/env mkdir -p /home/www/yurii-test.tk/releases/20170511050018 as root@52.37.231.14
+ DEBUG [ebd38953] Command: cd /home/www/yurii-test.tk/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-yurii-test.tk-production-root.sh" ; /usr/bin/env mkdir -p /home/www/yurii-test.tk/releases/20170511050018 )
+  INFO [ebd38953] Finished in 0.391 seconds with exit status 0 (successful).
+  INFO [c70ce477] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/www/yurii-test.tk/releases/20170511050018 as root@52.37.231.14
+ DEBUG [c70ce477] Command: cd /home/www/yurii-test.tk/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-yurii-test.tk-production-root.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/www/yurii-test.tk/releases/20170511050018 )
+  INFO [c70ce477] Finished in 0.397 seconds with exit status 0 (successful).
+ DEBUG [6a88fdcb] Running if test ! -d /home/www/yurii-test.tk/repo; then echo "Directory does not exist '/home/www/yurii-test.tk/repo'" 1>&2; false; fi as root@52.37.231.14
+ DEBUG [6a88fdcb] Command: if test ! -d /home/www/yurii-test.tk/repo; then echo "Directory does not exist '/home/www/yurii-test.tk/repo'" 1>&2; false; fi
+ DEBUG [6a88fdcb] Finished in 0.390 seconds with exit status 0 (successful).
+ DEBUG [4dfff44a] Running /usr/bin/env git rev-list --max-count=1 master as root@52.37.231.14
+ DEBUG [4dfff44a] Command: cd /home/www/yurii-test.tk/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-yurii-test.tk-production-root.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [4dfff44a] 	fad210af67317fb49386229e82b50e42e6ed691a
+ DEBUG [4dfff44a] Finished in 0.395 seconds with exit status 0 (successful).
+ DEBUG [510eee41] Running if test ! -d /home/www/yurii-test.tk/releases/20170511050018; then echo "Directory does not exist '/home/www/yurii-test.tk/releases/20170511050018'" 1>&2; false; fi as root@52.37.231.14
+ DEBUG [510eee41] Command: if test ! -d /home/www/yurii-test.tk/releases/20170511050018; then echo "Directory does not exist '/home/www/yurii-test.tk/releases/20170511050018'" 1>&2; false; fi
+ DEBUG [510eee41] Finished in 0.390 seconds with exit status 0 (successful).
+  INFO [55f5f407] Running /usr/bin/env echo "fad210af67317fb49386229e82b50e42e6ed691a" >> REVISION as root@52.37.231.14
+ DEBUG [55f5f407] Command: cd /home/www/yurii-test.tk/releases/20170511050018 && /usr/bin/env echo "fad210af67317fb49386229e82b50e42e6ed691a" >> REVISION
+  INFO [55f5f407] Finished in 0.391 seconds with exit status 0 (successful).
+  INFO [0b75afc6] Running /usr/bin/env ln -s /home/www/yurii-test.tk/releases/20170511050018 /home/www/yurii-test.tk/releases/current as root@52.37.231.14
+ DEBUG [0b75afc6] Command: /usr/bin/env ln -s /home/www/yurii-test.tk/releases/20170511050018 /home/www/yurii-test.tk/releases/current
+  INFO [0b75afc6] Finished in 0.393 seconds with exit status 0 (successful).
+  INFO [df5af729] Running /usr/bin/env mv /home/www/yurii-test.tk/releases/current /home/www/yurii-test.tk as root@52.37.231.14
+ DEBUG [df5af729] Command: /usr/bin/env mv /home/www/yurii-test.tk/releases/current /home/www/yurii-test.tk
+  INFO [df5af729] Finished in 0.392 seconds with exit status 0 (successful).
+ DEBUG [1ad57c65] Running /usr/bin/env ls -x /home/www/yurii-test.tk/releases as root@52.37.231.14
+ DEBUG [1ad57c65] Command: /usr/bin/env ls -x /home/www/yurii-test.tk/releases
+ DEBUG [1ad57c65] 	20170510210745	20170510210856	20170511043249	20170511050018
+ DEBUG [1ad57c65] Finished in 0.391 seconds with exit status 0 (successful).
+  INFO [b3397455] Running cd /home/www/yurii-test.tk/current && bundle install as root@52.37.231.14
+ DEBUG [b3397455] Command: cd /home/www/yurii-test.tk/current && bundle install
+ DEBUG [b3397455] 	Don't run Bundler as root. Bundler can ask for sudo if it is needed, and
+installing your bundle as root will break this application for all non-root
+users on this machine.
+ DEBUG [b3397455] 	Resolving dependencies...
+ DEBUG [b3397455] 	
+ DEBUG [b3397455] 	Using rake 12.0.0
+ DEBUG [b3397455] 	Using i18n 0.8.1
+ DEBUG [b3397455] 	Using minitest 5.10.1
+ DEBUG [b3397455] 	Using thread_safe 0.3.6
+ DEBUG [b3397455] 	Using builder 3.2.3
+ DEBUG [b3397455] 	Using erubis 2.7.0
+ DEBUG [b3397455] 	Using mini_portile2 2.1.0
+ DEBUG [b3397455] 	Using rack 1.6.6
+ DEBUG [b3397455] 	Using mime-types-data 3.2016.0521
+ DEBUG [b3397455] 	Using arel 6.0.4
+ DEBUG [b3397455] 	Using net-ssh 4.1.0
+ DEBUG [b3397455] 	Using debug_inspector 0.0.3
+ DEBUG [b3397455] 	Using bundler 1.14.6
+ DEBUG [b3397455] 	Using byebug 9.0.6
+ DEBUG [b3397455] 	Using coffee-script-source 1.12.2
+ DEBUG [b3397455] 	Using execjs 2.7.0
+ DEBUG [b3397455] 	Using thor 0.19.4
+ DEBUG [b3397455] 	Using concurrent-ruby 1.0.5
+ DEBUG [b3397455] 	Using daemons 1.2.4
+ DEBUG [b3397455] 	Using eventmachine 1.2.3
+ DEBUG [b3397455] 	Using multi_json 1.12.1
+ DEBUG [b3397455] 	Using json 1.8.6
+ DEBUG [b3397455] 	Using rdoc 4.3.0
+ DEBUG [b3397455] 	Using sass 3.4.23
+ DEBUG [b3397455] 	Using tilt 2.0.7
+ DEBUG [b3397455] 	Using sqlite3 1.3.13
+ DEBUG [b3397455] 	Using turbolinks-source 5.0.3
+ DEBUG [b3397455] 	Using tzinfo 1.2.3
+ DEBUG [b3397455] 	Using nokogiri 1.7.1
+ DEBUG [b3397455] 	Using rack-test 0.6.3
+ DEBUG [b3397455] 	Using mime-types 3.1
+ DEBUG [b3397455] 	Using net-scp 1.2.1
+ DEBUG [b3397455] 	Using binding_of_caller 0.7.2
+ DEBUG [b3397455] 	Using coffee-script 2.4.1
+ DEBUG [b3397455] 	Using uglifier 3.2.0
+ DEBUG [b3397455] 	Using sprockets 3.7.1
+Using thin 1.7.0
+Using sdoc 0.4.2
+Using turbolinks 5.0.1
+Using activesupport 4.2.8
+Using loofah 2.0.3
+Using mail 2.6.5
+Using sshkit 1.13.1
+ DEBUG [b3397455] 	Using rails-deprecated_sanitizer 1.0.3
+Using globalid 0.4.0
+Using activemodel 4.2.8
+Using jbuilder 2.6.3
+Using spring 2.0.1
+Using rails-html-sanitizer 1.0.3
+Using airbrussh 1.2.0
+ DEBUG [b3397455] 	Using rails-dom-testing 1.0.8
+Using activejob 4.2.8
+Using activerecord 4.2.8
+Using capistrano 3.8.1
+ DEBUG [b3397455] 	Using actionview 4.2.8
+Using capistrano-bundler 1.2.0
+ DEBUG [b3397455] 	Using actionpack 4.2.8
+Using capistrano-rails 1.2.3
+ DEBUG [b3397455] 	Using actionmailer 4.2.8
+Using railties 4.2.8
+Using sprockets-rails 3.2.0
+ DEBUG [b3397455] 	Using coffee-rails 4.1.1
+Using jquery-rails 4.3.1
+Using rails 4.2.8
+Using sass-rails 5.0.6
+Using web-console 2.3.0
+ DEBUG [b3397455] 	Bundle complete! 15 Gemfile dependencies, 66 gems now installed.
+ DEBUG [b3397455] 	Use `bundle show [gemname]` to see where a bundled gem is installed.
+  INFO [b3397455] Finished in 0.922 seconds with exit status 0 (successful).
+  INFO [00e01bbe] Running service thin restart && service nginx reload as root@52.37.231.14
+ DEBUG [00e01bbe] Command: service thin restart && service nginx reload
+  INFO [00e01bbe] Finished in 2.331 seconds with exit status 0 (successful).
+ DEBUG [ce4642ed] Running if test ! -d /home/www/yurii-test.tk/releases; then echo "Directory does not exist '/home/www/yurii-test.tk/releases'" 1>&2; false; fi as root@52.37.231.14
+ DEBUG [ce4642ed] Command: if test ! -d /home/www/yurii-test.tk/releases; then echo "Directory does not exist '/home/www/yurii-test.tk/releases'" 1>&2; false; fi
+ DEBUG [ce4642ed] Finished in 0.389 seconds with exit status 0 (successful).
+  INFO [f340c9a7] Running /usr/bin/env echo "Branch master (at fad210af67317fb49386229e82b50e42e6ed691a) deployed as release 20170511050018 by root" >> /home/www/yurii-test.tk/revisions.log as root@52.37.231.14
+ DEBUG [f340c9a7] Command: cd /home/www/yurii-test.tk/releases && /usr/bin/env echo "Branch master (at fad210af67317fb49386229e82b50e42e6ed691a) deployed as release 20170511050018 by root" >> /home/www/yurii-test.tk/revisions.log
+  INFO [f340c9a7] Finished in 0.390 seconds with exit status 0 (successful).

@@ -8,6 +8,7 @@ gem 'sqlite3'
 gem 'thin'
 gem 'capistrano'
 gem 'capistrano-rails'
+gem 'capistrano-ci'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
